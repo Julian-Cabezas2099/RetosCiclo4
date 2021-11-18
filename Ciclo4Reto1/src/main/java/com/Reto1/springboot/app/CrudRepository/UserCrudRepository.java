@@ -1,0 +1,16 @@
+package com.Reto1.springboot.app.CrudRepository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+
+import com.Reto1.springboot.app.Models.entities.User;
+
+
+public interface UserCrudRepository extends CrudRepository<User, Integer>{
+	
+	@Query("Select u FROM User u where u.user_email=?1")
+	public Optional<User> getEmail(String email);
+		
+}
