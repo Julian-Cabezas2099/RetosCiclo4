@@ -22,11 +22,13 @@ public class User implements Serializable {
 	@Column(name="user_email", nullable=false, length=50, unique=true)
 	private String email;
 	
+	@Column(name="user_password",nullable=false, length=50)
+	private String password;
+	
 	@Column(name="user_name",nullable=false, length=80)
 	private String name;
 	
-	@Column(name="user_password",nullable=false, length=50)
-	private String password;
+	
 
 	
 	public Integer getId() {
@@ -58,6 +60,15 @@ public class User implements Serializable {
 	}
 
 	public void setPassword(String password) {
+		this.password = password;
+	}
+	public User(){
+
+	}
+	public User(Integer id, String email, String name, String password) {
+		this.id = id;
+		this.email = email;
+		this.name = name;
 		this.password = password;
 	}
 

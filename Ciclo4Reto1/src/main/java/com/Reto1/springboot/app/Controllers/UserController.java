@@ -38,6 +38,10 @@ public class UserController {
     public boolean getUser(@PathVariable("email") String userEmail) {
         return servicio.getValidationEmail(userEmail);
     }
+    @GetMapping("/{email}/{password}")
+    public User getAccess(@PathVariable("email") String userEmail, @PathVariable("password") String userPassword) {
+        return servicio.getValidationCredentials(userEmail, userPassword);
+    }
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public User save(@RequestBody User user) {

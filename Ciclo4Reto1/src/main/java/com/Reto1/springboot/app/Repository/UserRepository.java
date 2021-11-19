@@ -32,5 +32,9 @@ public class UserRepository {
 	public Optional<User> validateEmail(String userEmail){
 		return userCrud.validateEmail(userEmail);
 	}
+	 //3. Validar credenciales de acceso
+	 public Optional<User> validateCredentials(String userEmail, String userPassword){
+		return userCrud.validateCredentials(userEmail, userPassword);
+	}
 	 
 }

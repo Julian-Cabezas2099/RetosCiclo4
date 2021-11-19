@@ -13,5 +13,8 @@ public interface UserCrudRepository extends CrudRepository<User, Integer>{
 	
 	@Query("Select u FROM User u where u.email=?1")
 	public Optional<User> validateEmail(String email);
+
+	@Query("Select u FROM User u where u.email=?1 and u.password=?2")
+	public Optional<User> validateCredentials(String email, String password);
 		
 }

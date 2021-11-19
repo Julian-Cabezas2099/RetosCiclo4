@@ -28,6 +28,19 @@ public class UserService {
             return true;
         }
     }
+    public User getValidationCredentials (String userEmail, String userPassword){
+        
+        User respuestaCredenciales;
+        Optional<User> respuesta = metodosCrud.validateCredentials(userEmail, userPassword);
+        
+        if (respuesta.isEmpty()){
+            respuestaCredenciales = new User(null, userEmail, "NO DEFINIDO",userPassword );
+        }else{
+            respuestaCredenciales = respuesta.get();
+        }
+
+        return respuestaCredenciales;
+    }
 
     public User save(User user){
         if(user.getId() == null){
