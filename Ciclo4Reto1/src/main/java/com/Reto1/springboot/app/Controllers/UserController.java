@@ -1,7 +1,7 @@
 package com.Reto1.springboot.app.Controllers;
 
 import java.util.List;
-import java.util.Optional;
+// import java.util.Optional;
 
 import com.Reto1.springboot.app.Models.entities.User;
 import com.Reto1.springboot.app.Services.UserService;
@@ -30,10 +30,10 @@ public class UserController {
     public List<User> getClients(){
         return servicio.getAll();
     }
-    @GetMapping("/{id}")
-    public Optional<User> getUser(@PathVariable("id") int userId) {
-        return servicio.getUser(userId);
-    }
+    // @GetMapping("/{id}")
+    // public Optional<User> getUser(@PathVariable("id") int userId) {
+    //     return servicio.getUser(userId);
+    // }
     @GetMapping("/{email}")
     public boolean getUser(@PathVariable("email") String userEmail) {
         return servicio.getValidationEmail(userEmail);

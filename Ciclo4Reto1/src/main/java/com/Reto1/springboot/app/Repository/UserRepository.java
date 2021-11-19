@@ -28,7 +28,6 @@ public class UserRepository {
 	public User save(User p){
 	        return userCrud.save(p);
 	}
-	 
 	 //3. Validar si existe email
 	public Optional<User> validateEmail(String userEmail){
 		return userCrud.validateEmail(userEmail);
