@@ -19,14 +19,14 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(nullable=false, length=50, unique=true)
-	private String user_email;
+	@Column(name="user_email", nullable=false, length=50, unique=true)
+	private String email;
 	
-	@Column(nullable=false, length=80)
-	private String user_namevarchar;
+	@Column(name="user_name",nullable=false, length=80)
+	private String name;
 	
-	@Column(nullable=false, length=50)
-	private String user_passwordvarchar;
+	@Column(name="user_password",nullable=false, length=50)
+	private String password;
 
 	
 	public Integer getId() {
@@ -37,29 +37,33 @@ public class User implements Serializable {
 		this.id = id;
 	}
 
-	public String getUser_email() {
-		return user_email;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUser_email(String user_email) {
-		this.user_email = user_email;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getUser_namevarchar() {
-		return user_namevarchar;
+	public String getName() {
+		return name;
 	}
 
-	public void setUser_namevarchar(String user_namevarchar) {
-		this.user_namevarchar = user_namevarchar;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getUser_passwordvarchar() {
-		return user_passwordvarchar;
+	public String getPassword() {
+		return password;
 	}
 
-	public void setUser_passwordvarchar(String user_passwordvarchar) {
-		this.user_passwordvarchar = user_passwordvarchar;
+	public void setPassword(String password) {
+		this.password = password;
 	}
+
+	
+
+	
 	
 	
 }
